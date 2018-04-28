@@ -14,6 +14,11 @@ Object.assign(userSchema.statics, {
   post (fields) {
     return this.create(fields)
   },
+  getAllUsers () {
+    return this.find().sort({
+      joinedAt: -1
+    })
+  },
   getUser (id) {
     return this.findById(id)
   }
