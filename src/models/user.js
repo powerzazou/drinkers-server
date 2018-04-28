@@ -7,7 +7,7 @@ import mongoose, { Schema } from 'mongoose'
 const userSchema = new Schema({
   beer1: { type: Number, required: true },
   beer2: { type: Number, required: true },
-  joinedAt: { type: Date, default: Date.now }
+  joinedAt: { type: Date, default: Date.now } // pour info
 })
 
 Object.assign(userSchema.statics, {

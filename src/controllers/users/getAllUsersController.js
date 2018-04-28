@@ -8,6 +8,7 @@ export default async function getAllUsersController (req, res) {
     if (!users) {
       res.sendStatus(404)
     }
+    // La pour le coup je n'ajoute pas la donnée des deux bières, sinon on va spammer l'API punk a chaque getAll
     res.send(users)
   } catch (error) {
     console.log(error)

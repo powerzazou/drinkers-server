@@ -4,14 +4,13 @@ import User from '../../models/user'
 export default async function patchUserController (req, res) {
   try {
     const user = await User.getUser(req.params.id)
-    // Souci SQL ou entité introuvable : on sera gérés par le dernier callback
-    // de rejet de promesse.
     if (!user) {
       console.log('pas d utilisateur...')
       res.sendStatus(404)
     }
     const body = req.body
     const fieldsToPatch = {}
+    // Du coup avec ce pattern, on est forcé de mettre deux ids de bière valide, sinon erreur ...
     if (body.beer1) {
       try {
         const beer1Id = parseInt(body.beer1)
