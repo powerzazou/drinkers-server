@@ -13,6 +13,9 @@ const userSchema = new Schema({
 Object.assign(userSchema.statics, {
   post (fields) {
     return this.create(fields)
+  },
+  getUser (id) {
+    return this.findById(id)
   }
 })
 
