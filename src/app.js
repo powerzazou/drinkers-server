@@ -4,6 +4,7 @@
 import createLogger from 'morgan'
 import express from 'express'
 import mongoose from 'mongoose'
+import bodyParser from 'body-parser'
 
 import 'colors'
 
@@ -18,7 +19,7 @@ if (app.get('env') !== 'test') {
 }
 
 // Middlewares et routes applicatifs
-
+app.use(bodyParser.urlencoded({ extended: true }))
 app.use(Users)
 
 export default app

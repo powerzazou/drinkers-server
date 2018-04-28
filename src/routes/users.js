@@ -2,6 +2,7 @@ import { Router } from 'express'
 import createUserController from '../controllers/users/createUserController'
 import getUserController from '../controllers/users/getUserController'
 import getAllUsersController from '../controllers/users/getAllUsersController'
+import patchUserController from '../controllers/users/patchUserController'
 
 const router = new Router()
 
@@ -15,6 +16,9 @@ router.get('/users', (req, res) => {
 
 router.get('/users/:id', (req, res) => {
   getUserController(req, res)
+})
+router.patch('/users/:id', (req, res) => {
+  patchUserController(req, res)
 })
 
 export default router

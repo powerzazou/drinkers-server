@@ -23,6 +23,11 @@ Object.assign(userSchema.statics, {
     return this.findById(id)
   }
 })
+Object.assign(userSchema.methods, {
+  update (fields) {
+    return this.set(fields).save()
+  }
+})
 
 const Model = mongoose.model('User', userSchema)
 
