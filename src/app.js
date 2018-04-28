@@ -7,7 +7,7 @@ import mongoose from 'mongoose'
 
 import 'colors'
 
-import createUserRoute from './routes/users/createUser'
+import Users from './routes/users'
 
 mongoose.Promise = Promise
 
@@ -19,6 +19,6 @@ if (app.get('env') !== 'test') {
 
 // Middlewares et routes applicatifs
 
-app.use(createUserRoute)
+app.use(Users)
 
 export default app
